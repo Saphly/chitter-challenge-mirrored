@@ -65,3 +65,7 @@ As a trainee
 In order to start a conversation as a DFA trainee Software Engineer
 I want to reply to a peep from another trainee.
 ```
+
+
+#### Resources
+Logo and favicon - app.logo.com
