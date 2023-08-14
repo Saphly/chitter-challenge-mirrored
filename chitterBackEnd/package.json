@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "NODE_ENV=test mocha --timeout 10000 --exit",
+    "start": "NODE_ENV=dev nodemon server",
+    "test-win": "SET NODE_ENV=test&&mocha --timeout 10000 --exit",
+    "start-win": "SET NODE_ENV=dev&&nodemon src/server"
   },
   "author": "Kee Wei Lim",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.7",
     "chai-http": "^4.4.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "mocha": "^10.2.0",
