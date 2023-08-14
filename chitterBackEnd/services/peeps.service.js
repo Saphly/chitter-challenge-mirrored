@@ -1,4 +1,4 @@
-import Peep from "../models/peep.model";
+import Peep from "../models/peep.model.js";
 
 export const getPeepsService = async () => {
   try {

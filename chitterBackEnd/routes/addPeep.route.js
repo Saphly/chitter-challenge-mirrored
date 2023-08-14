@@ -1,7 +1,7 @@
 import express from "express";
 
-import { addPeepController } from "../controllers/addPeep.controller";
-import { newPeepValidation } from "../middlewares/peeps.validation";
+import { addPeepController } from "../controllers/addPeep.controller.js";
+import { newPeepValidation } from "../middlewares/peeps.validation.js";
 
 const router = express.Router();
 

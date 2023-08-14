@@ -3,8 +3,8 @@ import { config } from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 
-import { allPeeps } from "./routes/allPeeps.route";
-import { addPeep } from "./routes/addPeep.route";
+import { allPeeps } from "./routes/allPeeps.route.js";
+import { addPeep } from "./routes/addPeep.route.js";
 
 config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -25,7 +25,7 @@ app.use(cors());
 app.use("/", allPeeps);
 app.use("/add-peep", addPeep);
 
-const server = app.listen(port, hose, () => {
+const server = app.listen(port, host, () => {
   const SERVERHOST = server.address().address;
   const SERVERPORT = server.address().port;
   console.log(`Server is runnning on http://${SERVERHOST}:${SERVERPORT}`);

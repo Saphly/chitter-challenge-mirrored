@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import { addPeepService } from "../services/peeps.service";
+import { addPeepService } from "../services/peeps.service.js";
 
 export const addPeepController = async (req, res) => {
   const errors = validationResult(req);
