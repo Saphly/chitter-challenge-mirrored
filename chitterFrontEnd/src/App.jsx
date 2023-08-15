@@ -8,25 +8,30 @@ import { getPeeps } from "./utils/peepDataServices.js";
 
 function App() {
   const [peeps, setPeeps] = useState([]);
+  const [peepsError, setPeepsError] = useState({});
 
   useEffect(() => {
     getPeepsHandler();
   }, []);
 
   const getPeepsHandler = async () => {
-    const extDataCallRes = await getPeeps();
-    console.log("DID IT WORK: ", extDataCallRes);
-    // TODO: ERROR HANDLING
-    setPeeps(extDataCallRes.peeps);
+    const externalDataCallResult = await getPeeps();
+
+    if (externalDataCallResult?.error)
+      setPeepsError(externalDataCallResult.error);
+    setPeeps(externalDataCallResult.peeps);
   };
 
   return (
     <>
-      <div>
+      <div style={{ minHeight: "100vh" }}>
         <Header />
         <div>
           <Routes>
-            <Route path="/" element={<HomePage peeps={peeps} />} />
+            <Route
+              path="/"
+              element={<HomePage peeps={peeps} peepsError={peepsError} />}
+            />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </div>

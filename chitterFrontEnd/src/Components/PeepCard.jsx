@@ -1,28 +1,30 @@
-const PeepCard = () => {
+import PropTypes from "prop-types";
+
+const PeepCard = ({ singlePeep }) => {
+  const { dateCreated, name, peep, username } = singlePeep;
+
   return (
     <div className="w-50 py-4 border-bottom">
       <div className="d-flex align-items-center pb-1">
-        <div className="fw-semibold fs-4">NAME</div>
-        <div className="px-4 me-auto">@Username</div>
-        <div className="fw-lighter fs-6">17/07/2023 10:32</div>
+        <div className="fw-semibold fs-4">{name}</div>
+        <div className="px-4 me-auto">@{username}</div>
+        <div className="fw-lighter fs-6">
+          {new Date(dateCreated).toLocaleString()}
+        </div>
       </div>
 
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta
-        augue justo, ut mattis ligula accumsan id. In vel ex interdum, lacinia
-        purus a, lacinia ligula. Nulla elementum tincidunt enim. Praesent
-        suscipit nisl egestas justo efficitur viverra. In hac habitasse platea
-        dictumst. Vestibulum viverra vehicula enim non volutpat. Phasellus in
-        condimentum ex. Aenean volutpat pretium elit ac aliquam. Sed
-        sollicitudin sed velit ut fringilla. Phasellus id tempor eros, non
-        pellentesque nibh. Donec lacinia congue massa vel convallis. Vivamus
-        imperdiet gravida bibendum. Phasellus viverra sapien mi, sit amet
-        condimentum lorem luctus vel. Nulla quis sapien justo. Duis lectus diam,
-        luctus ac commodo ac, venenatis vitae ex. Proin libero justo, blandit
-        nec erat sit amet, eleifend consequat nisi.{" "}
-      </div>
+      <div>{peep}</div>
     </div>
   );
+};
+
+PeepCard.propTypes = {
+  singlePeep: PropTypes.shape({
+    dateCreated: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    peep: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+  }),
 };
 
 export default PeepCard;
