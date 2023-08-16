@@ -2,7 +2,6 @@ import axios from "axios";
 
 export const getPeeps = async () => {
   try {
-    console.log("IM IN GETPEEPS FE: ", import.meta.env.VITE_PEEPSURL);
     const res = await axios.get(import.meta.env.VITE_PEEPSURL);
     if (res.data?.length > 0) {
       return {
