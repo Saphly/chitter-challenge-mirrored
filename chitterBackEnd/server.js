@@ -5,6 +5,8 @@ import cors from "cors";
 
 import { allPeeps } from "./routes/allPeeps.route.js";
 import { addPeep } from "./routes/addPeep.route.js";
+import { login } from "./routes/login.route.js";
+import { register } from "./routes/register.route.js";
 
 config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -24,6 +26,8 @@ app.use(express.json());
 app.use(cors());
 app.use("/", allPeeps);
 app.use("/add-peep", addPeep);
+app.use("/login", login);
+app.use("/register", register);
 
 const server = app.listen(port, host, () => {
   const SERVERHOST = server.address().address;
