@@ -1,13 +1,90 @@
 const LoginRegisterModal = () => {
   const loginForm = (
     <form>
-      <label>
-        Email: <input type="email" value="email" placeholder="Email" />
-      </label>
-      <label>
-        Password:
-        <input type="password" value="password" placeholder="Password" />
-      </label>
+      <div className="mb-3">
+        <label className="form-label">Email address</label>
+        <input
+          type="email"
+          className="form-control"
+          id="loginEmail"
+          aria-describedby="emailLoginInput"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="loginPassword"
+          aria-describedby="passwordLoginInput"
+          placeholder="Password"
+          required
+        />
+      </div>
+
+      <button className="d-block mx-auto p-2 btn btn-primary">Login</button>
+    </form>
+  );
+
+  const registerForm = (
+    // email, password, name and a username
+    <form>
+      <div className="mb-3">
+        <label className="form-label">Email address</label>
+        <input
+          type="email"
+          className="form-control"
+          id="registerEmail"
+          aria-describedby="emailRegisterInput"
+          placeholder="Email"
+          required
+        />
+      </div>
+
+      <div className="mb-3">
+        <label className="form-label">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="registerPassword"
+          aria-describedby="passwordRegisterInput"
+          placeholder="Password"
+          required
+        />
+      </div>
+
+      <div className="mb-3">
+        <label className="form-label">Name</label>
+        <input
+          type="text"
+          className="form-control"
+          id="registerName"
+          aria-describedby="nameRegisterInput"
+          placeholder="Name"
+          required
+        />
+      </div>
+
+      <div className="mb-3">
+        <label className="form-label">Username</label>
+        <div className="input-group">
+          <span className="input-group-text" id="registerUsername">
+            @
+          </span>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="usernameRegisterInput"
+            required
+          />
+        </div>
+      </div>
+
+      <button className="d-block mx-auto p-2 btn btn-primary">Register</button>
     </form>
   );
 
@@ -22,7 +99,7 @@ const LoginRegisterModal = () => {
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header border-0">
               <h1 className="modal-title fs-5" id="loginModalLabel">
                 Login
               </h1>
@@ -34,22 +111,15 @@ const LoginRegisterModal = () => {
               ></button>
             </div>
             <div className="modal-body">{loginForm}</div>
-            <div className="modal-footer">
-              {/* <button
-                className="btn btn-primary"
-                data-bs-target="#registerModal"
-                data-bs-toggle="modal"
-              >
-                Open second modal
-              </button> */}
-              New to Chitter?{" "}
+            <div className="modal-footer border-0 justify-content-center fs-6">
+              New to Chitter?
               <div
-                className=""
+                className="link-underline-primary"
                 type="button"
                 data-bs-target="#registerModal"
                 data-bs-toggle="modal"
               >
-                Click here to register
+                <u>Click here to register</u>
               </div>
             </div>
           </div>
@@ -66,9 +136,9 @@ const LoginRegisterModal = () => {
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header border-0">
               <h1 className="modal-title fs-5" id="registerModalLabel">
-                Modal 2
+                Register
               </h1>
               <button
                 type="button"
@@ -77,17 +147,17 @@ const LoginRegisterModal = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
-              Hide this modal and show the first with the button below.
-            </div>
-            <div className="modal-footer">
-              <button
-                className="btn btn-primary"
+            <div className="modal-body">{registerForm}</div>
+            <div className="modal-footer border-0 justify-content-center fs-6">
+              &#60;
+              <div
+                className="link-underline-primary"
+                type="button"
                 data-bs-target="#loginModal"
                 data-bs-toggle="modal"
               >
-                Back to first
-              </button>
+                <u>Back to login</u>
+              </div>
             </div>
           </div>
         </div>
