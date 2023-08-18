@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getPeeps = async () => {
   try {
-    const res = await axios.get(import.meta.env.VITE_PEEPSURL);
+    const res = await axios.get(import.meta.env.VITE_API_URL);
     if (res.data?.length > 0) {
       return {
         peeps: res.data,
@@ -22,4 +22,10 @@ export const getPeeps = async () => {
       },
     };
   }
+};
+
+export const postPeeps = async () => {
+  // try {
+  // } catch (e) {
+  // }
 };

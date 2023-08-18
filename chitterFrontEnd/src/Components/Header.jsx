@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import LoginRegisterModal from "./LoginRegisterModal";
 
 const Header = () => {
   return (
     <>
-      <LoginRegisterModal />
       <header className="sticky-top">
         <nav className="d-flex align-items-center justify-content-between bg-dark p-2">
           <Link to="/">

@@ -3,12 +3,16 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import HomePage from "./Components/HomePage";
 import NotFound from "./Components/NotFound";
+import LoginRegisterModal from "./Components/LoginRegisterModal";
 
 import { getPeeps } from "./utils/peepDataServices.js";
+import { login } from "./utils/loginServices.js";
 
 function App() {
   const [peeps, setPeeps] = useState([]);
   const [peepsError, setPeepsError] = useState({});
+  const [user, setUser] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     getPeepsHandler();
@@ -22,10 +26,24 @@ function App() {
     setPeeps(externalDataCallResult.peeps);
   };
 
+  const loginHandler = async (loginDetails) => {
+    const loginResult = await login(loginDetails);
+
+    console.log(loginResult);
+    if (loginResult?.error) {
+      setErrorMessage(loginResult.error.message);
+    }
+
+    setUser(loginResult.user);
+  };
+
   return (
     <>
+      <LoginRegisterModal
+        loginHandler={(loginDetails) => loginHandler(loginDetails)}
+      />
       <div style={{ minHeight: "100vh" }}>
-        <Header />
+        <Header user={user} />
         <div>
           <Routes>
             <Route

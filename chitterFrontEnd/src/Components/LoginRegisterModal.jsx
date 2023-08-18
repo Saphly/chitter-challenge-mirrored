@@ -1,4 +1,11 @@
-const LoginRegisterModal = () => {
+import { useState } from "react";
+
+const LoginRegisterModal = ({ loginHandler }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+
   const loginForm = (
     <form>
       <div className="mb-3">
@@ -10,6 +17,8 @@ const LoginRegisterModal = () => {
           aria-describedby="emailLoginInput"
           placeholder="Email"
           required
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
         />
       </div>
       <div className="mb-3">
@@ -21,10 +30,20 @@ const LoginRegisterModal = () => {
           aria-describedby="passwordLoginInput"
           placeholder="Password"
           required
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
         />
       </div>
 
-      <button className="d-block mx-auto p-2 btn btn-primary">Login</button>
+      <button
+        className="d-block mx-auto p-2 btn btn-primary"
+        onClick={(event) => {
+          event.preventDefault();
+          loginHandler({ email, password });
+        }}
+      >
+        Login
+      </button>
     </form>
   );
 
@@ -40,6 +59,8 @@ const LoginRegisterModal = () => {
           aria-describedby="emailRegisterInput"
           placeholder="Email"
           required
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
         />
       </div>
 
@@ -52,6 +73,8 @@ const LoginRegisterModal = () => {
           aria-describedby="passwordRegisterInput"
           placeholder="Password"
           required
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
         />
       </div>
 
@@ -64,6 +87,8 @@ const LoginRegisterModal = () => {
           aria-describedby="nameRegisterInput"
           placeholder="Name"
           required
+          value={name}
+          onChange={(event) => setName(event.target.value)}
         />
       </div>
 
@@ -80,6 +105,8 @@ const LoginRegisterModal = () => {
             aria-label="Username"
             aria-describedby="usernameRegisterInput"
             required
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
           />
         </div>
       </div>
