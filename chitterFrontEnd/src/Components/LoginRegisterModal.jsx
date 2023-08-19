@@ -12,11 +12,17 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
   const onLoginClick = (event) => {
     event.preventDefault();
     loginHandler({ email, password });
+    setEmail("");
+    setPassword("");
   };
 
   const onRegisterClick = (event) => {
     event.preventDefault();
     registerHandler({ email, password, name, username });
+    setEmail("");
+    setPassword("");
+    setName("");
+    setUsername("");
   };
 
   const loginForm = (
@@ -61,7 +67,6 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
   );
 
   const registerForm = (
-    // email, password, name and a username
     <form>
       <div className="mb-3">
         <label className="form-label">Email address</label>
