@@ -1,4 +1,8 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
+
+// TODO: onSubmit clear states and close modal
+// TODO: make an alert?
 
 const LoginRegisterModal = ({ loginHandler }) => {
   const [email, setEmail] = useState("");
@@ -191,6 +195,10 @@ const LoginRegisterModal = ({ loginHandler }) => {
       </div>
     </>
   );
+};
+
+LoginRegisterModal.propTypes = {
+  loginHandler: PropTypes.func,
 };
 
 export default LoginRegisterModal;

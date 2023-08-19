@@ -37,18 +37,24 @@ function App() {
     setUser(loginResult.user);
   };
 
+  const logoutHandler = () => {
+    setUser({});
+  };
+
   return (
     <>
       <LoginRegisterModal
         loginHandler={(loginDetails) => loginHandler(loginDetails)}
       />
       <div style={{ minHeight: "100vh" }}>
-        <Header user={user} />
+        <Header user={user} logoutHandler={() => logoutHandler()} />
         <div>
           <Routes>
             <Route
               path="/"
-              element={<HomePage peeps={peeps} peepsError={peepsError} />}
+              element={
+                <HomePage peeps={peeps} peepsError={peepsError} user={user} />
+              }
             />
             <Route path="/*" element={<NotFound />} />
           </Routes>

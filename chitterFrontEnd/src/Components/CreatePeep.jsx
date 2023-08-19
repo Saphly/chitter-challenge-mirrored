@@ -1,7 +1,7 @@
 const CreatePeep = () => {
   return (
     <div className="w-50">
-      <p className="fs-5">What&apos;s happening? </p>
+      <p className="fs-3">What&apos;s happening? </p>
       <form className="d-flex flex-column align-items-end">
         <textarea
           placeholder="What's happening? "
