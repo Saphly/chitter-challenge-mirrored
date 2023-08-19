@@ -1,8 +1,8 @@
 import { check } from "express-validator";
 
 export const newPeepValidation = [
-  check("username").exists(),
-  check("name").exists(),
+  check("username").isString().exists(),
+  check("name").isString().exists(),
   check("dateCreated").exists().isISO8601(),
-  check("peep").exists(),
+  check("peep").isString().exists(),
 ];

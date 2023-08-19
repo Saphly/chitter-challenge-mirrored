@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import CreatePeep from "./CreatePeep";
 import PeepCard from "./PeepCard";
 
-const HomePage = ({ peeps, peepsError, user }) => {
+const HomePage = ({ peeps, peepsError, user, postPeepHandler }) => {
   const renderAllPeeps = () =>
     peeps.map((peep) => {
       return <PeepCard key={peep._id} singlePeep={peep} />;
@@ -11,7 +11,7 @@ const HomePage = ({ peeps, peepsError, user }) => {
 
   return (
     <div className="d-flex flex-column align-items-center h-100">
-      {user.name && <CreatePeep />}
+      {user.name && <CreatePeep postPeepHandler={postPeepHandler} />}
 
       <div className="w-50 fs-3 border-bottom">Latest peeps</div>
 
@@ -34,6 +34,7 @@ HomePage.propTypes = {
     name: PropTypes.string,
     username: PropTypes.string,
   }),
+  postPeepHandler: PropTypes.func,
 };
 
 export default HomePage;

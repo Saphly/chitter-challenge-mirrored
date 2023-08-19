@@ -6,7 +6,6 @@ export const getPeeps = async () => {
     if (res.data?.length > 0) {
       return {
         peeps: res.data,
-        status: res.status,
       };
     }
     throw new Error("There are no new peeps!");
@@ -24,8 +23,23 @@ export const getPeeps = async () => {
   }
 };
 
-export const postPeeps = async () => {
-  // try {
-  // } catch (e) {
-  // }
+export const postPeeps = async ({ name, username, dateCreated, peep }) => {
+  try {
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/add-peep`, {
+      name,
+      username,
+      dateCreated,
+      peep,
+    });
+    console.log(res);
+    if (res.data) {
+      return { peep: res.data.peep, status: res.status };
+    }
+  } catch (e) {
+    return {
+      error: {
+        message: e.response.data,
+      },
+    };
+  }
 };

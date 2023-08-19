@@ -10,6 +10,7 @@ export const addPeepController = async (req, res) => {
 
   try {
     const peep = await addPeepService(req.body);
+
     res.status(201).json({ peep });
   } catch (e) {
     console.log("add peep cont err: ", e);

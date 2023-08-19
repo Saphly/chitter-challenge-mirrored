@@ -2,12 +2,12 @@ import { check } from "express-validator";
 
 export const newUserRegistrationValidation = [
   check("email").trim().isEmail().exists(),
-  check("password").exists(),
-  check("name").exists(),
-  check("username").exists(),
+  check("password").isString().exists(),
+  check("name").isString().exists(),
+  check("username").isString().exists(),
 ];
 
 export const userLoginValidation = [
   check("email").trim().isEmail().exists(),
-  check("password").exists(),
+  check("password").isString().exists(),
 ];

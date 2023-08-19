@@ -5,7 +5,7 @@ import HomePage from "./Components/HomePage";
 import NotFound from "./Components/NotFound";
 import LoginRegisterModal from "./Components/LoginRegisterModal";
 
-import { getPeeps } from "./utils/peepDataServices.js";
+import { getPeeps, postPeeps } from "./utils/peepDataServices.js";
 import { login } from "./utils/loginServices.js";
 import { register } from "./utils/registerServices.js";
 
@@ -55,6 +55,23 @@ function App() {
     }
   };
 
+  const postPeepHandler = async (newPeep) => {
+    const peepDetails = {
+      peep: newPeep.peep,
+      dateCreated: new Date().toISOString(),
+      name: user.name,
+      username: user.username,
+    };
+
+    const postPeepResult = await postPeeps(peepDetails);
+    console.log(postPeepResult);
+    if (postPeepResult?.error) {
+      alert(postPeepResult.error.message);
+    }
+
+    getPeepsHandler();
+  };
+
   return (
     <>
       <LoginRegisterModal
@@ -68,7 +85,14 @@ function App() {
             <Route
               path="/"
               element={
-                <HomePage peeps={peeps} peepsError={peepsError} user={user} />
+                <HomePage
+                  peeps={peeps}
+                  peepsError={peepsError}
+                  user={user}
+                  postPeepHandler={(newPeepDetails) =>
+                    postPeepHandler(newPeepDetails)
+                  }
+                />
               }
             />
             <Route path="/*" element={<NotFound />} />
