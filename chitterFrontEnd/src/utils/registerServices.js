@@ -1,17 +1,18 @@
 import axios from "axios";
 
-export const login = async ({ email, password }) => {
+export const register = async ({ email, password, name, username }) => {
   try {
-    const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/register`, {
       email,
       password,
+      name,
+      username,
     });
 
     return res.data;
   } catch (e) {
     console.log(e.response);
     return {
-      user: {},
       error: {
         message: e.response.data,
       },

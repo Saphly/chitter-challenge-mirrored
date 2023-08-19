@@ -2,13 +2,22 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 // TODO: onSubmit clear states and close modal
-// TODO: make an alert?
 
-const LoginRegisterModal = ({ loginHandler }) => {
+const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
+
+  const onLoginClick = (event) => {
+    event.preventDefault();
+    loginHandler({ email, password });
+  };
+
+  const onRegisterClick = (event) => {
+    event.preventDefault();
+    registerHandler({ email, password, name, username });
+  };
 
   const loginForm = (
     <form>
@@ -41,9 +50,9 @@ const LoginRegisterModal = ({ loginHandler }) => {
 
       <button
         className="d-block mx-auto p-2 btn btn-primary"
+        disabled={email.length === 0 || password.length === 0}
         onClick={(event) => {
-          event.preventDefault();
-          loginHandler({ email, password });
+          onLoginClick(event);
         }}
       >
         Login
@@ -115,7 +124,18 @@ const LoginRegisterModal = ({ loginHandler }) => {
         </div>
       </div>
 
-      <button className="d-block mx-auto p-2 btn btn-primary">Register</button>
+      <button
+        className="d-block mx-auto p-2 btn btn-primary"
+        disabled={
+          email.length === 0 ||
+          password.length === 0 ||
+          name.length === 0 ||
+          username.length === 0
+        }
+        onClick={(event) => onRegisterClick(event)}
+      >
+        Register
+      </button>
     </form>
   );
 
@@ -199,6 +219,7 @@ const LoginRegisterModal = ({ loginHandler }) => {
 
 LoginRegisterModal.propTypes = {
   loginHandler: PropTypes.func,
+  registerHandler: PropTypes.func,
 };
 
 export default LoginRegisterModal;

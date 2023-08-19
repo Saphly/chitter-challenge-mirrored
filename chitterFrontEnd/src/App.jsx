@@ -7,12 +7,12 @@ import LoginRegisterModal from "./Components/LoginRegisterModal";
 
 import { getPeeps } from "./utils/peepDataServices.js";
 import { login } from "./utils/loginServices.js";
+import { register } from "./utils/registerServices.js";
 
 function App() {
   const [peeps, setPeeps] = useState([]);
   const [peepsError, setPeepsError] = useState({});
   const [user, setUser] = useState({});
-  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     getPeepsHandler();
@@ -31,20 +31,35 @@ function App() {
 
     console.log(loginResult);
     if (loginResult?.error) {
-      setErrorMessage(loginResult.error.message);
+      alert(loginResult.error.message);
     }
 
-    setUser(loginResult.user);
+    if (loginResult.user.name) {
+      alert(loginResult.message);
+      setUser(loginResult.user);
+    }
   };
 
   const logoutHandler = () => {
     setUser({});
   };
 
+  const registerHandler = async (registerDetails) => {
+    const registerResult = await register(registerDetails);
+
+    console.log(registerResult);
+    if (registerResult?.error) {
+      alert(registerResult.error.message);
+    } else {
+      alert(`${registerResult.message}! Please proceed to login.`);
+    }
+  };
+
   return (
     <>
       <LoginRegisterModal
         loginHandler={(loginDetails) => loginHandler(loginDetails)}
+        registerHandler={(registerDetails) => registerHandler(registerDetails)}
       />
       <div style={{ minHeight: "100vh" }}>
         <Header user={user} logoutHandler={() => logoutHandler()} />
