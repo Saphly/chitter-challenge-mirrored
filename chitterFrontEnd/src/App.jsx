@@ -19,17 +19,19 @@ function App() {
   }, []);
 
   const getPeepsHandler = async () => {
+    setPeepsError({});
+
     const externalDataCallResult = await getPeeps();
 
     if (externalDataCallResult?.error)
       setPeepsError(externalDataCallResult.error);
+
     setPeeps(externalDataCallResult.peeps);
   };
 
   const loginHandler = async (loginDetails) => {
     const loginResult = await login(loginDetails);
 
-    console.log(loginResult);
     if (loginResult?.error) {
       alert(loginResult.error.message);
     }
@@ -47,7 +49,6 @@ function App() {
   const registerHandler = async (registerDetails) => {
     const registerResult = await register(registerDetails);
 
-    console.log(registerResult);
     if (registerResult?.error) {
       alert(registerResult.error.message);
     } else {
@@ -69,7 +70,7 @@ function App() {
       alert(postPeepResult.error.message);
     }
 
-    getPeepsHandler();
+    await getPeepsHandler();
   };
 
   return (

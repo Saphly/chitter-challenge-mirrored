@@ -12,9 +12,7 @@ export const getPeeps = async () => {
   } catch (e) {
     return {
       peeps: [],
-      status: e.response?.status ?? 204,
       error: {
-        type: "get",
         message: `Data not available from the server: ${
           e.message ?? e.response.message
         }`,
@@ -37,9 +35,7 @@ export const postPeeps = async ({ name, username, dateCreated, peep }) => {
     }
   } catch (e) {
     return {
-      error: {
-        message: e.response.data,
-      },
+      error: e.response.data,
     };
   }
 };

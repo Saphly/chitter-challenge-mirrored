@@ -11,11 +11,6 @@ export const register = async ({ email, password, name, username }) => {
 
     return res.data;
   } catch (e) {
-    console.log(e.response);
-    return {
-      error: {
-        message: e.response.data,
-      },
-    };
+    return { error: e.response.data };
   }
 };

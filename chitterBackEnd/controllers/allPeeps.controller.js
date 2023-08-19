@@ -5,6 +5,6 @@ export const allPeeps = async (req, res) => {
     const peeps = await getPeepsService();
     res.json(peeps);
   } catch (e) {
-    res.status(404).send("Not found");
+    res.status(404).send({ message: "Not found" });
   }
 };

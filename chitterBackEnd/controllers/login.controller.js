@@ -5,7 +5,7 @@ export const userLoginController = async (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    return res.status(422).send("Login failed");
+    return res.status(422).send({ message: "Login failed" });
   }
 
   try {
@@ -22,6 +22,6 @@ export const userLoginController = async (req, res) => {
     res.status(400).send({ message: "Details not found" });
   } catch (e) {
     console.log(e);
-    res.status(400).send("Login failed");
+    res.status(400).send({ message: "Login failed" });
   }
 };

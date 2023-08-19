@@ -12,9 +12,7 @@ export const login = async ({ email, password }) => {
     console.log(e.response);
     return {
       user: {},
-      error: {
-        message: e.response.data,
-      },
+      error: e.response.data,
     };
   }
 };

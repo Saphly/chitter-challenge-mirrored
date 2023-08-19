@@ -8,7 +8,7 @@ export const userRegisterController = async (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    return res.status(422).send("Registration failed");
+    return res.status(422).send({ message: "Registration failed" });
   }
 
   try {

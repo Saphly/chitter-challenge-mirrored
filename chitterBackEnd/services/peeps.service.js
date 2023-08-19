@@ -2,7 +2,7 @@ import Peep from "../models/peep.model.js";
 
 export const getPeepsService = async () => {
   try {
-    return await Peep.find({});
+    return await Peep.find({}).sort({ dateCreated: -1 });
   } catch (e) {
     throw e;
   }
