@@ -23,14 +23,19 @@ This Chitter project is my version of a Twitter/X clone. Users can view peeps wi
 
 This project is developed using the following frameworks and libraries:
 
-* [![React][React.js]][[React-url](https://react.dev/)]
-* [![Bootstrap][Bootstrap.com]][[Bootstrap-url](https://getbootstrap.com/)]
-* [![Vite][Vite.js]][[Vite-url](https://vitejs.dev/)]
-* [![Vitest][Vitest.dev]][[Vitest-url](https://vitest.dev/)]
-* [![Node][Node.js]][[Node-url](https://nodejs.org/en)]
-* [![Express][Express.js]][[Express-url](https://github.com/expressjs/express)]
-* [![Chai][Chai.js]][[Chai-url](https://github.com/chaijs/chai)]
-* [![Mocha][Mocha.js]][[Mocha-url](https://github.com/mochajs/mocha)]
+<ul>
+    <li>[React.js](https://react.dev/)</li>
+    <li>[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)</li>
+    <li>[Bootstrap.com](https://getbootstrap.com/)</li>
+    <li>[Vite.js](https://vitejs.dev/)</li>
+    <li>[Vitest.dev](https://vitest.dev/)</li>
+    <li>[Node.js](https://nodejs.org/en)</li>
+    <li>[Express.js](https://github.com/expressjs/express)</li>
+    <li>[Chai.js](https://github.com/chaijs/chai)</li>
+    <li>[Mocha.js](https://github.com/mochajs/mocha)</li>
+    <li>[MongoDB](https://www.mongodb.com/)</li>
+    <li>[Mongoose.js](https://mongoosejs.com/)</li>
+</ul>
 
 ### Getting Started
 
@@ -134,7 +139,7 @@ Chitter Logo and favicon generated from [app.logo.com](https://app.logo.com)
 Some improvements that I would like to do in this project: 
 <ul>
     <li>Auto dismiss the modals after logging in or registering</li>
-    <li>Change ```alert()``` </li>
+    <li>Change <code>alert()</code> </li>
     <li>Move functions out of App.js</li>
     <li>Implement JWT Authentication</li>
 </ul>
