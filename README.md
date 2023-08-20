@@ -15,6 +15,64 @@ We are going to write a small twitter clone that will allow users to post messag
 
 Good luck and let the chitter begin!
 
+### About The Project
+
+This Chitter project is my version of a Twitter/X clone. Users can view peeps without logging in, you can register as a new user, and you can post peeps using your account.
+
+### Developed With
+
+This project is developed using the following frameworks and libraries:
+
+* [![React][React.js]][[React-url](https://react.dev/)]
+* [![Bootstrap][Bootstrap.com]][[Bootstrap-url](https://getbootstrap.com/)]
+* [![Vite][Vite.js]][[Vite-url](https://vitejs.dev/)]
+* [![Vitest][Vitest.dev]][[Vitest-url](https://vitest.dev/)]
+* [![Node][Node.js]][[Node-url](https://nodejs.org/en)]
+* [![Express][Express.js]][[Express-url](https://github.com/expressjs/express)]
+* [![Chai][Chai.js]][[Chai-url](https://github.com/chaijs/chai)]
+* [![Mocha][Mocha.js]][[Mocha-url](https://github.com/mochajs/mocha)]
+
+### Getting Started
+
+#### Prerequisite
+
+You will need to have mongodb-community running first. For Mac, run:
+```
+brew services start mongodb-community
+```
+
+#### Get the code 
+
+```
+git clone https://github.com/Saphly/chitter-challenge.git
+```
+
+As the project is split into two folders (back-end and front-end), you will have to go into each folder and run them locally on separate terminals.
+
+
+#### Back-end
+
+If you are in the root directory of this project, run
+```
+cd chitterBackEnd && npm i
+npm run start
+```
+
+#### Front-end
+
+If you are in the root directory of this project, run
+```
+cd chitterFrontEnd && npm i
+npm run dev
+```
+
+#### For tests
+
+Make sure that your terminal is in the folder that you are interested in testing, and run the following: 
+```
+npm run test
+```
+
 Features:
 -------
 
@@ -68,4 +126,15 @@ I want to reply to a peep from another trainee.
 
 
 #### Resources
-Logo and favicon - app.logo.com
+
+Chitter Logo and favicon generated from [app.logo.com](https://app.logo.com)
+
+#### Reflection
+
+Some improvements that I would like to do in this project: 
+<ul>
+    <li>Auto dismiss the modals after logging in or registering</li>
+    <li>Change ```alert()``` </li>
+    <li>Move functions out of App.js</li>
+    <li>Implement JWT Authentication</li>
+</ul>
