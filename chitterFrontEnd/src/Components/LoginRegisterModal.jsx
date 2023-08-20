@@ -33,7 +33,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
           type="email"
           className="form-control"
           id="loginEmail"
-          aria-describedby="emailLoginInput"
+          aria-label="emailLoginInput"
           placeholder="Email"
           required
           value={email}
@@ -46,7 +46,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
           type="password"
           className="form-control"
           id="loginPassword"
-          aria-describedby="passwordLoginInput"
+          aria-label="passwordLoginInput"
           placeholder="Password"
           required
           value={password}
@@ -56,6 +56,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
 
       <button
         className="d-block mx-auto p-2 btn btn-primary"
+        aria-label="modalLoginFormButton"
         disabled={email.length === 0 || password.length === 0}
         onClick={(event) => {
           onLoginClick(event);
@@ -74,7 +75,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
           type="email"
           className="form-control"
           id="registerEmail"
-          aria-describedby="emailRegisterInput"
+          aria-label="emailRegisterInput"
           placeholder="Email"
           required
           value={email}
@@ -88,7 +89,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
           type="password"
           className="form-control"
           id="registerPassword"
-          aria-describedby="passwordRegisterInput"
+          aria-label="passwordRegisterInput"
           placeholder="Password"
           required
           value={password}
@@ -102,7 +103,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
           type="text"
           className="form-control"
           id="registerName"
-          aria-describedby="nameRegisterInput"
+          aria-label="nameRegisterInput"
           placeholder="Name"
           required
           value={name}
@@ -120,8 +121,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
             type="text"
             className="form-control"
             placeholder="Username"
-            aria-label="Username"
-            aria-describedby="usernameRegisterInput"
+            aria-label="usernameRegisterInput"
             required
             value={username}
             onChange={(event) => setUsername(event.target.value)}
@@ -131,6 +131,7 @@ const LoginRegisterModal = ({ loginHandler, registerHandler }) => {
 
       <button
         className="d-block mx-auto p-2 btn btn-primary"
+        aria-label="modalRegisterFormButton"
         disabled={
           email.length === 0 ||
           password.length === 0 ||

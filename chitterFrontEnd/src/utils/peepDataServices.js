@@ -13,9 +13,7 @@ export const getPeeps = async () => {
     return {
       peeps: [],
       error: {
-        message: `Data not available from the server: ${
-          e.message ?? e.response.message
-        }`,
+        message: e.message ?? e.response.message,
       },
     };
   }

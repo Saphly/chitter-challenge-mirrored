@@ -27,7 +27,6 @@ const HomePage = ({ peeps, peepsError, user, postPeepHandler }) => {
 HomePage.propTypes = {
   peeps: PropTypes.array,
   peepsError: PropTypes.shape({
-    type: PropTypes.string,
     message: PropTypes.string,
   }),
   user: PropTypes.shape({
