@@ -8,7 +8,8 @@
     "test": "NODE_ENV=test mocha --timeout 10000 --exit",
     "start": "NODE_ENV=dev nodemon server",
     "test-win": "SET NODE_ENV=test&&mocha --timeout 10000 --exit",
-    "start-win": "SET NODE_ENV=dev&&nodemon src/server"
+    "start-win": "SET NODE_ENV=dev&&nodemon src/server",
+    "coverage": "c8 --100 npm run test"
   },
   "author": "Kee Wei Lim",
   "license": "ISC",
@@ -21,5 +22,8 @@
     "express-validator": "^7.0.1",
     "mocha": "^10.2.0",
     "mongoose": "^7.4.2"
+  },
+  "devDependencies": {
+    "c8": "^8.0.1"
   }
 }
