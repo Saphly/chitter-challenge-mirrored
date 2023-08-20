@@ -37,16 +37,16 @@ This project is developed using the following frameworks and libraries:
     <li><a href="https://mongoosejs.com/">Mongoose.js </a></li>
 </ul>
 
-### Getting Started
+## Getting Started
 
-#### Prerequisite
+### Prerequisite
 
 You will need to have mongodb-community running first. For Mac, run:
 ```
 brew services start mongodb-community
 ```
 
-#### Get the code 
+### Get the code 
 
 ```
 git clone https://github.com/Saphly/chitter-challenge.git
@@ -55,7 +55,7 @@ git clone https://github.com/Saphly/chitter-challenge.git
 As the project is split into two folders (back-end and front-end), you will have to go into each folder and run them locally on separate terminals.
 
 
-#### Back-end
+### Back-end
 
 If you are in the root directory of this project, run
 ```
@@ -63,7 +63,7 @@ cd chitterBackEnd && npm i
 npm run start
 ```
 
-#### Front-end
+### Front-end
 
 If you are in the root directory of this project, run
 ```
@@ -71,7 +71,19 @@ cd chitterFrontEnd && npm i
 npm run dev
 ```
 
-#### For tests
+### Using the app
+
+As you will be starting off with a completely empty project, you can follow these steps to create a new user and post some peeps!
+
+<ol>
+    <li>Click on the Login button on the header</li>
+    <li>Click on "Click here to register"</li>
+    <li>Fill in your details (email, password, name and username) and click register</li>
+    <li>Once you are registered, go back and login with your details</li>
+    <li>Post some peeps!</li>
+</ol>
+
+### For tests
 
 Make sure that your terminal is in the folder that you are interested in testing, and run the following: 
 ```
