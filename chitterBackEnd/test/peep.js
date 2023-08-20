@@ -105,6 +105,21 @@ describe("Testing peep requests on the database", () => {
       expect(res.body.message).to.equal("Posting new peep failed");
     });
 
+    it("should not post a peep with a dateCreated field that is not ISO8601", async () => {
+      const newPeep = {
+        name: "usernameA",
+        username: "usernameA",
+        peep: "Today is Sunday!",
+        dateCreated: "2022/2/2",
+      };
+
+      const res = await testServer.post("/add-peep").send(newPeep);
+
+      expect(res).to.have.status(422);
+      expect(res).to.have.property("error");
+      expect(res.body.message).to.equal("Posting new peep failed");
+    });
+
     it("should not post a peep with a username that does not exist", async () => {
       const newPeep = {
         name: "usernameA",

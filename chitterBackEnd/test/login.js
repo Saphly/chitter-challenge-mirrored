@@ -62,7 +62,7 @@ describe("Testing login requests on the database", () => {
       };
 
       const res = await testServer.post("/login").send(loginDetail);
-      console.log(res);
+
       expect(res).to.have.status(200);
       expect(res.body.message).to.equal("Login success");
       expect(res.body.user).to.deep.include({
