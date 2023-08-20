@@ -24,17 +24,17 @@ This Chitter project is my version of a Twitter/X clone. Users can view peeps wi
 This project is developed using the following frameworks and libraries:
 
 <ul>
-    <li>[React.js](https://react.dev/)</li>
-    <li>[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)</li>
-    <li>[Bootstrap.com](https://getbootstrap.com/)</li>
-    <li>[Vite.js](https://vitejs.dev/)</li>
-    <li>[Vitest.dev](https://vitest.dev/)</li>
-    <li>[Node.js](https://nodejs.org/en)</li>
-    <li>[Express.js](https://github.com/expressjs/express)</li>
-    <li>[Chai.js](https://github.com/chaijs/chai)</li>
-    <li>[Mocha.js](https://github.com/mochajs/mocha)</li>
-    <li>[MongoDB](https://www.mongodb.com/)</li>
-    <li>[Mongoose.js](https://mongoosejs.com/)</li>
+    <li><a href="https://react.dev/">React.js </a></li>
+    <li><a href="https://testing-library.com/docs/react-testing-library/intro/">React Testing Library </a></li>
+    <li><a href="https://getbootstrap.com/">Bootstrap.com </a></li>
+    <li><a href="https://vitejs.dev/">Vite.js </a></li>
+    <li><a href="https://vitest.dev/">Vitest.dev </a></li>
+    <li><a href="https://nodejs.org/en">Node.js </a></li>
+    <li><a href="https://github.com/expressjs/express">Express.js </a></li>
+    <li><a href="https://github.com/chaijs/chai">Chai.js </a></li>
+    <li><a href="https://github.com/mochajs/mocha">Mocha.js </a></li>
+    <li><a href="https://www.mongodb.com/">MongoDB </a></li>
+    <li><a href="https://mongoosejs.com/">Mongoose.js </a></li>
 </ul>
 
 ### Getting Started
